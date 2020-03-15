@@ -7,8 +7,8 @@
       :disabled="disabled"
       :autofocus="autofocus"
     >
-      <i v-if="icon" class="trayvon" :class="icon"></i>
-      <i v-if="loading" class="trayvon rotate t-icon-loading"></i>
+      <i v-if="icon" class="Xind-UI" :class="icon"></i>
+      <i v-if="loading" class="Xind-UI rotate x-icon-loading"></i>
       <slot v-if="!circle"></slot>
     </button>
   </div>
@@ -315,7 +315,7 @@ export default {
     }
   }
 }
-.trayvon {
+.Xind-UI {
   display: inline-block;
   font-size: 14px;
   line-height: 14px;

@@ -41,7 +41,7 @@ export default {
     },
     duration: {
       type: Number,
-      default: 3000
+      default: 3
     }
   },
   data() {
@@ -52,7 +52,7 @@ export default {
     setTimeout(() => {
       let content = this.$refs.content;
       if (this.isAnimate) {
-        content.style.transition = `width ${this.duration}ms ease`;
+        content.style.transition = `width ${this.duration}s ease`;
       }
       content.style.width = `${this.percentage}%`;
     }, 20);

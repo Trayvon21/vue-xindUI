@@ -1,12 +1,12 @@
 <template>
     <div>
-        制作中，
+        XFullScreen
     </div>
 </template>
 
 <script>
 export default {
-     name: '404' , 
+     name: 'XFullScreen' , 
     props: {
 
     },
