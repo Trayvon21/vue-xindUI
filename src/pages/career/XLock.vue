@@ -1,41 +1,24 @@
 <template>
-    <div>
-        xLock
-    </div>
+  <div>
+    <x-lock />
+  </div>
 </template>
 
 <script>
 export default {
-     name: 'xLock' , 
-    props: {
-
-    },
-    data() {
-        return {
-
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-
-    },
+  name: "xindLock",
+  props: {},
+  data() {
+    return {};
+  },
+  computed: {},
+  created() {},
+  mounted() {},
+  watch: {},
+  methods: {},
+  components: {}
 };
 </script>
 
 <style scoped lang="scss">
-
 </style>
