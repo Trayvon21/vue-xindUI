@@ -194,6 +194,28 @@ const routes = [
     ]
   },
   {
+    path: "/xInlineTable",
+    component: Home,
+    children: [
+      {
+        path: "",
+        name: "xInlineTable",
+        component: () => import("../pages/complex/InlineTable.vue")
+      }
+    ]
+  },
+  {
+    path: "/xEditTable",
+    component: Home,
+    children: [
+      {
+        path: "",
+        name: "xEditTable",
+        component: () => import("../pages/complex/CellTable")
+      }
+    ]
+  },
+  {
     path: "*",
     component: Home,
     children: [

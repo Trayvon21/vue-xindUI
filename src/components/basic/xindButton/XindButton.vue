@@ -6,6 +6,7 @@
       :type="nativeType"
       :disabled="disabled"
       :autofocus="autofocus"
+      @click="onclick"
     >
       <i v-if="icon" class="Xind-UI" :class="icon"></i>
       <i v-if="loading" class="Xind-UI rotate x-icon-loading"></i>
@@ -88,11 +89,11 @@ export default {
         : "";
     }
   },
-  created() {},
-  mounted() {},
-  watch: {},
-  methods: {},
-  components: {}
+  methods: {
+    onclick() {
+      this.$emit("click");
+    }
+  }
 };
 </script>
 

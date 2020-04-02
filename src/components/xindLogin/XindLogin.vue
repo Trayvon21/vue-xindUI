@@ -1,49 +1,58 @@
 <template>
-  <div class="x-login">
-    <el-input prefix-icon="el-icon-user" v-model="formData.user" placeholder="请输入账号"></el-input>
-    <el-input
-      prefix-icon="el-icon-lock"
-      type="password"
-      show-password
-      v-model="formData.password"
-      placeholder="请输入密码"
-    ></el-input>
-    <x-button :type="flag?'primary':''" :disabled="!flag" @click="submit">登录</x-button>
+  <div>
+    <x-form :model="formData" :rules="rules" ref="ruleForm">
+      <x-form-item required label="用户名" prop="username">
+        <x-input v-model="formData.username" placeholder="请输入用户名"></x-input>
+      </x-form-item>
+      <x-form-item required label="密码" prop="password">
+        <x-input type="password" v-model="formData.password" placeholder="请输入密码" @keydown.enter.native="submit('ruleForm')"></x-input>
+      </x-form-item>
+      <x-form-item>
+        <x-button type="primary" @click="submit('ruleForm')">登录</x-button>
+        <x-button type="info" @click="reset('ruleForm')">重置</x-button>
+      </x-form-item>
+    </x-form>
   </div>
 </template>
 
 <script>
 export default {
   name: "XindLogin",
-  props: {},
+  provide() {
+    return {
+      form: this
+    };
+  },
   data() {
     return {
       formData: {
-        user: "",
+        username: "",
         password: ""
+      },
+      rules: {
+        username: [
+          { required: true, message: "账号不能为空", trigger: "blur" },
+          { min: 3, max: 10, message: "必须为3-10个字符", trigger: "blur" }
+        ],
+        password: [
+          { required: true, message: "密码不能为空", trigger: "blur" },
+          { min: 3, max: 10, message: "必须为3-10个字符", trigger: "blur" }
+        ]
       }
     };
   },
-  computed: {
-    flag() {
-      const { user, password } = this.formData;
-      return user.length > 0 && password.length > 0;
-    }
-  },
-  created() {},
-  mounted() {},
-  watch: {},
   methods: {
-    submit() {
-      this.$emit("submit", this.formData);
+    submit(formName) {
+      this.$refs[formName].validate(valid => {
+        console.log(valid);
+      });
+    },
+    reset(formName) {
+      this.$refs[formName].reset();
     }
-  },
-  components: {}
+  }
 };
 </script>
 
-<style scoped lang="scss">
-.x-login {
-  width: 300px;
-}
+<style lang="scss" scoped>
 </style>

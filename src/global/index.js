@@ -31,7 +31,14 @@ Vue.component("xNoFind", XindNoFind);
 import XindServerErr from "../components/career/XindServerErr";
 Vue.component("xServerErr", XindServerErr);
 // 复合
-import xindLogin from "../components/xindLogin/XindLogin";
-Vue.component("xindLogin", xindLogin);
-import xindPhoneLogin from "../components/xindLogin/XindPhoneLogin";
-Vue.component("xindPhoneLogin", xindPhoneLogin);
+import XForm from "../components/xindLogin/XForm";
+Vue.component("xForm", XForm);
+import XFormItem from "../components/xindLogin/XFormItem";
+Vue.component("xFormItem", XFormItem);
+import XInput from "../components/xindLogin/XInput";
+Vue.component("xInput", XInput);
+
+import XindTable from "../components/xindTable/XindTable";
+Vue.component("xTable", XindTable);
+import XindTableColumn from "../components/xindTable/XindTableColumn";
+Vue.component("xTableColumn", XindTableColumn);
